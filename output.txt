@@ -1,23 +1,16 @@
 [
   {
-    "param": "email",
-    "type": "text",
-    "id": "email",
-    "name": "email",
-    "html": "<input type=\"text\" class=\"inputtext _55r1 _6luy\" name=\"email\" id=\"email\" data-testid=\"royal_email\" placeholder=\"Email address or phone number\" autofocus=\"1\" aria-label=\"Email address or phone number\">"
+    "param": "UserName",
+    "type": "email",
+    "id": "userNameInput",
+    "name": "UserName",
+    "html": "<input id=\"userNameInput\" name=\"UserName\" type=\"email\" value=\"\" tabindex=\"1\" class=\"text fullWidth\" spellcheck=\"false\" placeholder=\"someone@example.com\" autocomplete=\"off\">"
   },
   {
-    "param": "pass",
+    "param": "Password",
     "type": "password",
-    "id": "pass",
-    "name": "pass",
-    "html": "<input type=\"password\" class=\"inputtext _55r1 _6luy _9npi\" name=\"pass\" id=\"pass\" data-testid=\"royal_pass\" placeholder=\"Password\" aria-label=\"Password\">"
-  },
-  {
-    "param": "next",
-    "type": "hidden",
-    "id": null,
-    "name": "next",
-    "html": "<input type=\"hidden\" autocomplete=\"off\" name=\"next\" value=\"\">"
+    "id": "passwordInput",
+    "name": "Password",
+    "html": "<input id=\"passwordInput\" name=\"Password\" type=\"password\" tabindex=\"2\" class=\"text fullWidth\" placeholder=\"Password\" autocomplete=\"off\">"
   }
 ]
