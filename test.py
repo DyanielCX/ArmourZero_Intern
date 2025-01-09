@@ -1,1 +1,2 @@
-testing = 2
+testing = "hello worlds"
+hi = "hello"
