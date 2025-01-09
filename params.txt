@@ -179,7 +179,6 @@ action2
 password2
 pass1
 meta
-ID
 deleted
 act
 port
@@ -238,7 +237,6 @@ testdata
 load
 list
 visibility
-User
 thumb
 stage
 history
@@ -719,7 +717,6 @@ empty
 chunks
 album
 userselect
-userName
 telephone
 stats
 saveauthors
@@ -862,7 +859,6 @@ perpage
 newsletter
 newsid
 names
-Name
 min
 logoutRequest
 logo
@@ -1067,7 +1063,6 @@ privileges
 primary
 poll
 pdf
-Password
 parameters
 out
 os
@@ -1162,7 +1157,6 @@ xmldump
 UserRecoveryForm
 UserLogin
 UserChangePassword
-USER
 updates
 tx
 tweet
@@ -1347,7 +1341,6 @@ ch
 cats
 cart
 calendar
-C
 browser
 brand
 birthday
@@ -1516,7 +1509,6 @@ vcode
 vbrmethod
 userrole
 userpass
-Username
 useremail
 userdata
 unsynchronizedtags
@@ -1609,7 +1601,6 @@ persistent
 permanent
 percent
 pay
-PASSWORD
 passwd2
 partial
 paid
@@ -1932,7 +1923,6 @@ local
 lightbox
 levels
 langID
-L
 kick
 karma
 j
@@ -1955,7 +1945,6 @@ IMG
 imageid
 ident
 id1
-Id
 icq
 href
 hostid
@@ -2103,7 +2092,6 @@ utype
 utf8
 usort
 Users
-USERNAME
 url1
 URL
 uploadpos
@@ -2351,7 +2339,6 @@ newdid
 NEWCHOICE
 nb
 name1
-NAME
 mytribe
 mtime
 mp
@@ -2600,4 +2587,3 @@ ACCESSLEVEL
 a1
 3
 1
-UserName

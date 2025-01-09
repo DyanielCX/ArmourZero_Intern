@@ -1,13 +1,13 @@
 [
   {
-    "param": "UserName",
+    "param": "username",
     "type": "email",
     "id": "userNameInput",
     "name": "UserName",
     "html": "<input id=\"userNameInput\" name=\"UserName\" type=\"email\" value=\"\" tabindex=\"1\" class=\"text fullWidth\" spellcheck=\"false\" placeholder=\"someone@example.com\" autocomplete=\"off\">"
   },
   {
-    "param": "Password",
+    "param": "password",
     "type": "password",
     "id": "passwordInput",
     "name": "Password",
