@@ -897,7 +897,6 @@ forums
 foo1
 FileName
 endpoint
-Email
 detail
 descr
 deny
@@ -2449,7 +2448,6 @@ eval
 endyear
 en
 email1
-EMAIL
 elementId
 eids
 education

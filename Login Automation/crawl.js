@@ -18,7 +18,7 @@ const path = require('path');
       .map(param => param.trim().toLowerCase()); // Convert params to lowercase
 
     // Define the URL to crawl
-    const url = 'https://adfs3.culinary.edu/adfs/ls/?client-request-id=7e9b8e9a-29ed-4b0c-9117-3ff5f36e971f&username=&wa=wsignin1.0&wtrealm=urn%3afederation%3aMicrosoftOnline&wctx=estsredirect%3d2%26estsrequest%3drQQIARAA42KwMsooKSkottLXTy7NycxLLKrMzCsuySwpLUnVK85ILEotyM_MK9FLzs_Vyy9Kz0wBsYqEuARm9c2ue6vJ4z1R3P7r57zp8rMYeWAG6KWmlK5itCfWXP3izJLUYv2A_KKSxJzwzKLUtKLE3FTDC4yMLxgZbzEJ-hele6aEF7ulpqQWJZZk5uddYBF4xcJjwGzFwcElwCDBoMDwg4VxESvQUQd2dfJvlPH23T3ZeseXdG6GU6z6Tt6VFYkp4SVhhYHaacERPoHGJvlGeUFpHulGYZ7hhll5kUZ5iWbFIdquBrYWVoYT2IQmsDGdYmP4wMbYwc4wi51hFyelPjnAy_CD79vN67cbJp5557FBgOGBAAMA0#'; // Replace with your URL
+    const url = 'https://webflow.com/login'; // Replace with your URL
 
     // First method: Extract all <input> elements
     const browser1 = await puppeteer.launch({ headless: true });
