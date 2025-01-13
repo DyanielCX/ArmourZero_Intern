@@ -1,16 +1,16 @@
 [
   {
     "param": "email",
-    "type": "text",
-    "id": "email-input",
+    "type": null,
+    "id": "email",
     "name": "email",
-    "html": "<input aria-describedby=\"form-group-701-help-text\" id=\"email-input\" required=\"\" placeholder=\"Email or username\" type=\"text\" data-automation-id=\"login-email-input\" class=\"wf-1rzwxxs --pick-hKwbC --styled-cRHicC wf-1e2df44\" aria-disabled=\"false\" data-sc=\"TextInputView\" name=\"email\" value=\"\">"
+    "html": "<input _ngcontent-ytu-c48=\"\" id=\"email\" name=\"email\" matinput=\"\" aria-label=\"Text field for the login email\" class=\"mat-input-element mat-form-field-autofill-control ng-tns-c21-7 ng-untouched ng-pristine ng-invalid cdk-text-field-autofill-monitored\" required=\"\" data-placeholder=\"\" aria-required=\"true\">"
   },
   {
     "param": "password",
     "type": "password",
-    "id": "password-input",
+    "id": "password",
     "name": "password",
-    "html": "<input aria-describedby=\"form-group-702-help-text\" id=\"password-input\" required=\"\" type=\"password\" data-automation-id=\"login-password-input\" placeholder=\"Password\" class=\"wf-1rzwxxs --pick-hKwbC --styled-cRHicC wf-1e2df44\" aria-disabled=\"false\" data-sc=\"TextInputView\" name=\"password\" value=\"\">"
+    "html": "<input _ngcontent-ytu-c48=\"\" id=\"password\" name=\"password\" matinput=\"\" aria-label=\"Text field for the login password\" class=\"mat-input-element mat-form-field-autofill-control ng-tns-c21-8 ng-untouched ng-pristine ng-invalid cdk-text-field-autofill-monitored\" type=\"password\" required=\"\" data-placeholder=\"\" aria-required=\"true\">"
   }
 ]

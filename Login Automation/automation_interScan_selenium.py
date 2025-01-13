@@ -1,6 +1,8 @@
-#!/usr/bin/env python
 import os
 import time
+import json
+import subprocess
+import read_varOutput
 from pprint import pprint
 from zapv2 import ZAPv2
 from selenium import webdriver
@@ -9,24 +11,28 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 ''' Launch OWASP ZAP '''
+# (Change to your own ZAP directory)
 path = "D:/Program Files/ZAP/Zed Attack Proxy/"
 os.chdir(path)
 os.system("ZAP.exe")
 time.sleep(20)
 
 ''' Website Information '''
-# Target URLs
+# Target URLs (Change to your own information)
 scanning_url = 'https://webapp3.wimify.xyz/profile'
 login_url = 'https://webapp3.wimify.xyz/#/login'
 username = 'tester@gmail.com'
 password = 'test123'
-usrnm_varNAME = 'email'
-passw_varNAME = 'password'
 
-# ZAP Configuration
+read_varOutput.extract_names() # Reteirve VarName from output.txt
+usrnm_varNAME = read_varOutput.Usrnm_varNAME
+passw_varNAME = read_varOutput.Passw_varNAME
+
+# ZAP Configuration (Change to your address, port & apiKey)
 zap_address = '127.0.0.1'
 zap_port = 8080
 apiKey = 'ui3c5012h6qqhen9ag0d1dmtlr'
+
 zap = ZAPv2(apikey=apiKey, proxies={
     'http': f'http://{zap_address}:{zap_port}',
     'https': f'http://{zap_address}:{zap_port}'
@@ -57,29 +63,28 @@ try:
     time.sleep(5)
     
     print('Login completed!')
-    print('')
 
 
     ''' Section 2 '''
     # Scanning target with ZAP
     
     ## ZAP Spider ##
-    print('--- ZAP Spider ---')
+    print('\n--- ZAP Spider ---')
     print('Starting ZAP spidering...')
     scanID = zap.spider.scan(scanning_url)
     while int(zap.spider.status(scanID)) < 100:
         # Poll the status until it completes
         print('Spider progress %: {}'.format(zap.spider.status(scanID)))
         time.sleep(1)
-
     print('Spider has completed!')
+
     # Print the URLs crawled by the spider
+    print("\nSpider Results:")
     print('\n'.join(map(str, zap.spider.results(scanID))))
-    print('')
 
     
     ## ZAP Ajax Spider ##
-    print('--- ZAP Ajax Spider ---')
+    print('\n--- ZAP Ajax Spider ---')
     print('Ajax Spider target {}'.format(scanning_url))
     scanID = zap.ajaxSpider.scan(scanning_url)
 
@@ -90,27 +95,32 @@ try:
             break
         print('Ajax Spider status' + zap.ajaxSpider.status)
         time.sleep(2)
-
     print('Ajax Spider completed')
-    ajaxResults = zap.ajaxSpider.results(start=0, count=10)
-    print('')
+
+    # Print all the ajax spider result
+    print("\nAjax Spider Results:")
+    ajaxResults = zap.ajaxSpider.full_results
+
+    for result in ajaxResults.get("inScope", []):
+        print(json.dumps(result))
 
 
     ## ZAP Active Scan ##
-    print('--- ZAP Active Scan ---')
+    print('\n--- ZAP Active Scan ---')
     print('Active Scanning target {}'.format(scanning_url))
     scanID = zap.ascan.scan(scanning_url)
     while int(zap.ascan.status(scanID)) < 100:
         # Loop until the scanner has finished
         print('Scan progress %: {}'.format(zap.ascan.status(scanID)))
         time.sleep(5)
-
     print('Active Scan completed')
-    print('')
+
     # Print vulnerabilities found by the scanning
+    print("\nActive Scan Results:")
     print('Hosts: {}'.format(', '.join(zap.core.hosts)))
     print('Alerts: ')
     pprint(zap.core.alerts(baseurl=scanning_url))
+    print('')
 
 except Exception as e:
     print(f'An error occurred: {e}')
@@ -118,3 +128,6 @@ except Exception as e:
 finally:
     # Close the Selenium WebDriver
     driver.quit()
+
+    # Close ZAP program
+    subprocess.call("TASKKILL /F /IM javaw.exe", shell=True)
