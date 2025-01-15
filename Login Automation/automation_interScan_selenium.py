@@ -19,10 +19,10 @@ time.sleep(20)
 
 ''' Website Information '''
 # Target URLs (Change to your own information)
-scanning_url = 'https://webapp3.wimify.xyz/profile'
-login_url = 'https://webapp3.wimify.xyz/#/login'
-username = 'tester@gmail.com'
-password = 'test123'
+scanning_url = 'https://webapp9.wimify.xyz/profile/aztest'
+login_url = 'https://webapp9.wimify.xyz/login'
+username = 'aztest'
+password = 'Password123#'
 
 read_varOutput.extract_names() # Reteirve VarName from output.txt
 usrnm_varNAME = read_varOutput.Usrnm_varNAME

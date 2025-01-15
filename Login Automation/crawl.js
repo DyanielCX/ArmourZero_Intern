@@ -18,7 +18,7 @@ const path = require('path');
       .map(param => param.trim().toLowerCase()); // Convert params to lowercase
 
     // Define the URL to crawl
-    const url = 'https://webapp3.wimify.xyz/#/login'; // Replace with your URL
+    const url = 'https://webapp9.wimify.xyz/login'; // Replace with your URL
 
     // First method: Extract all <input> elements
     const browser1 = await puppeteer.launch({ headless: true });

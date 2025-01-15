@@ -3,8 +3,8 @@ import time
 from pprint import pprint
 from zapv2 import ZAPv2
 
-apiKey = 'changeme'
-target = 'https://public-firing-range.appspot.com'
+apiKey = 'ui3c5012h6qqhen9ag0d1dmtlr'
+target = 'https://webapp9.wimify.xyz/profile/aztest'
 zap = ZAPv2(apikey=apiKey, proxies={'http': 'http://127.0.0.1:8080', 'https': 'http://127.0.0.1:8080'})
 
 # TODO : explore the app (Spider, etc) before using the Active Scan API, Refer the explore section

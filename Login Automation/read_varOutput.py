@@ -1,9 +1,9 @@
 import json
 
-# File path (Update this to the actual location of your JSON file)
+# File path (Change this to your actual location of the output.txt)
 outfilep = r"C:\Users\dyani\Desktop\Intern Script\ArmourZero_Intern\Login Automation\output.txt"
 
-# Initialize variables for import
+# Initialize variables
 Usrnm_varNAME = None
 Passw_varNAME = None
 
@@ -11,7 +11,7 @@ def extract_names():
     global Usrnm_varNAME, Passw_varNAME
     
     with open(outfilep, "r") as file:
-        content = json.load(file)  # Parses JSON into a Python list of dictionaries
+        content = json.load(file) 
 
     namecount = 0  # Counter for "name" entries
 
@@ -19,9 +19,9 @@ def extract_names():
     for line in content:
         if "name" in line:
             namecount += 1
-            if namecount == 1:  # First "name"
+            if namecount == 1:  # Username/Email "name"
                 Usrnm_varNAME = line["name"]
-            elif namecount == 2:  # Second "name"
+            elif namecount == 2:  # Password "name"
                 Passw_varNAME = line["name"]
                 break  # Exit loop once both variables are found
 

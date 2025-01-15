@@ -1,11 +1,12 @@
 #!/usr/bin/env python
 import time
+import json
 from zapv2 import ZAPv2
 
 # The URL of the application to be tested
-target = 'https://public-firing-range.appspot.com'
+target = 'https://webapp9.wimify.xyz/profile/aztest'
 # Change to match the API key set in ZAP, or use None if the API key is disabled
-apiKey = 'changeme'
+apiKey = 'ui3c5012h6qqhen9ag0d1dmtlr'
 
 # By default ZAP API client will connect to port 8080
 zap = ZAPv2(apikey=apiKey)
@@ -24,7 +25,13 @@ while zap.ajaxSpider.status == 'running':
     time.sleep(2)
 
 print('Ajax Spider completed')
-ajaxResults = zap.ajaxSpider.results(start=0, count=10)
+ajaxResults = zap.ajaxSpider.full_results
+
+print("\nAjax Spider Results:")
+# Process only inScope results
+for result in ajaxResults.get("inScope", []):
+    print(json.dumps(result))
+
 # If required perform additional operations with the Ajax Spider results
 
 # TODO: Start scanning the application to find vulnerabilities
