@@ -12,10 +12,10 @@ from selenium.webdriver.chrome.options import Options
 
 ''' Launch OWASP ZAP '''
 # (Change to your own ZAP directory)
-path = "D:/Program Files/ZAP/Zed Attack Proxy/"
-os.chdir(path)
-os.system("ZAP.exe")
-time.sleep(20)
+# path = "D:/Program Files/ZAP/Zed Attack Proxy/"
+# os.chdir(path)
+# os.system("ZAP.exe")
+# time.sleep(30)
 
 ''' Website Information '''
 # Target URLs (Change to your own information)
@@ -130,4 +130,4 @@ finally:
     driver.quit()
 
     # Close ZAP program
-    subprocess.call("TASKKILL /F /IM javaw.exe", shell=True)
+    # subprocess.call("TASKKILL /F /IM javaw.exe", shell=True)

@@ -1,7 +1,7 @@
 import json
 
 # File path (Change this to your actual location of the output.txt)
-outfilep = r"C:\Users\dyani\Desktop\Intern Script\ArmourZero_Intern\Login Automation\output.txt"
+outfilep = r"C:\Users\dyani\Desktop\Intern\ArmourZero_Intern\Login Automation\output.txt"
 
 # Initialize variables
 Usrnm_varNAME = None
