@@ -9,8 +9,8 @@ from selenium.webdriver.chrome.options import Options
 
 ''' Website Information '''
 # Target URLs (Change to your own information)
-scanning_url = 'https://webapp3.wimify.xyz/profile'
-login_url = 'https://webapp3.wimify.xyz/#/login'
+scanning_url = 'https://juice-shop.herokuapp.com/profile'
+login_url = 'https://juice-shop.herokuapp.com/#/login'
 username = 'tester@gmail.com'
 password = 'test123'
 
@@ -48,12 +48,12 @@ try:
     driver.find_element(By.NAME, passw_varNAME).send_keys(Keys.RETURN)
     time.sleep(5)
 
-    # Retrieve and format the authentication session
-    cookies = driver.get_cookies()
-
     print('\nLogin completed!')
 
     ''' Section 2 '''
+    # Retrieve and format the authentication session
+    cookies = driver.get_cookies()
+
     # Set Header for API Request
     headers = {
         'Accept': 'application/json',
