@@ -7,10 +7,10 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
 ''' ====================== Website Information ====================== '''
-scanning_url = 'https://juice-shop.herokuapp.com/profile'
-login_url = 'https://juice-shop.herokuapp.com/#/login'
-username = 'tester@gmail.com'
-password = 'test123'
+scanning_url = 'https://webapp8.wimify.xyz/home'
+login_url = 'https://webapp8.wimify.xyz/login#login'
+username = 'mvpchen2@gmail.com'
+password = 'Password123'
 
 usrnm_varNAME = 'email'
 passw_varNAME = 'password'
@@ -170,6 +170,7 @@ def main():
 
                 all_urls.update(ajax_tracked_urls)
                 print("AJAX Spider completed!")
+                print("Note: InScope,OutOfScope,errors might be just the AJAX find no new links")
                 break
             else:
                 print("  ...AJAX spider still running, waiting...")
