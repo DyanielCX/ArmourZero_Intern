@@ -50,11 +50,6 @@ def main():
         ''' ====================== SECTION 2: Configure ZAP & Replacer for Cookies ====================== '''
         cookies = driver.get_cookies()
 
-        headers = {
-            'Accept': 'application/json',
-            "X-ZAP-API-Key": apiKey
-        }
-
         cookie_value = ""
         for cookie in cookies:
             cookie_value += f"{cookie['name']}={cookie['value']}; "
@@ -64,7 +59,7 @@ def main():
             'https': f'http://{zap_address}:{zap_port}'
         })
 
-        # Force ZAP to send our session cookies on every request
+        # Add a custom cookies request header to every scanning request
         zap.replacer.add_rule(
             description="CookieHeader",
             enabled=True,
@@ -75,8 +70,16 @@ def main():
         )
 
         ''' ====================== SECTION 3: Classic Spider w/ Real-Time Tracking ====================== '''
+        headers = {
+            'Accept': 'application/json',
+            "X-ZAP-API-Key": apiKey
+        }
+
         print("--- Starting Classic Spider ---")
-        spider_params = {'url': scanning_url}
+        # Request for scanning
+        spider_params = {
+            'url': scanning_url
+            }
         spider_start_resp = requests.get(
             f"http://{proxy}/JSON/spider/action/scan/",
             params=spider_params,
@@ -87,6 +90,7 @@ def main():
             print(f"Error starting spider: {spider_start_resp.text}")
             return
 
+        # Monitor progress & result
         spider_progress_url = f"http://{proxy}/JSON/spider/view/status/"
         spider_results_url  = f"http://{proxy}/JSON/spider/view/results/"
 
@@ -124,7 +128,10 @@ def main():
             headers=headers
         )
 
-        ajax_params = {'url': scanning_url}
+        # Request for scanning
+        ajax_params = {
+            'url': scanning_url
+            }
         ajax_start_resp = requests.get(
             f"http://{proxy}/JSON/ajaxSpider/action/scan/",
             params=ajax_params,
@@ -134,6 +141,7 @@ def main():
             print(f"Error starting AJAX spider: {ajax_start_resp.text}")
             return
 
+        # Monitor progress & result
         ajax_status_url  = f"http://{proxy}/JSON/ajaxSpider/view/status/"
         ajax_results_url = f"http://{proxy}/JSON/ajaxSpider/view/fullResults/"
 
@@ -173,12 +181,13 @@ def main():
                 print("Note: InScope,OutOfScope,errors might be just the AJAX find no new links")
                 break
             else:
-                print("  ...AJAX spider still running, waiting...")
+                print("...AJAX spider still running, waiting...")
 
         print()
 
         ''' ====================== SECTION 5: Active Scan ====================== '''
         print("--- Starting Active Scan ---")
+        # Request for scanning
         scan_data = {
             "url": scanning_url,
             "recurse": "true",
@@ -195,6 +204,7 @@ def main():
             print(f"Error starting active scan: {ascan_json}")
             return
 
+        # Monitor progress & result
         while True:
             time.sleep(15)
             progress_data = requests.get(f"http://{proxy}/JSON/ascan/view/status/?scanId={scan_id}",
@@ -235,6 +245,10 @@ def main():
             for url in sorted(all_urls):
                 f.write(url + "\n")
 
+        # Remove Cookie Header
+        zap.replacer.remove_rule(description="CookieHeader")
+
+        # Close Selenium Browser
         driver.quit()
         print("\n=== Script Complete ===")
 

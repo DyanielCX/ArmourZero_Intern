@@ -28,4 +28,4 @@ zap = ZAPv2(apikey=apiKey, proxies={
 })
 
 # Add custom header to ZAP proxy
-# zap.replacer.remove_rule(description="RemoveCookieHeader")
+zap.replacer.remove_rule(description="CookieHeader")
