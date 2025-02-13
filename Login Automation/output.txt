@@ -1,16 +1,18 @@
 [
   {
-    "param": "username",
-    "type": "text",
-    "id": "username",
-    "name": "username",
-    "html": "<input type=\"text\" name=\"username\" id=\"username\" class=\"form-control\" value=\"\">"
+    "param": "email",
+    "type": "email",
+    "id": "login-email",
+    "name": "email",
+    "placeholder": "email@example.com",
+    "html": "<input tabindex=\"1\" id=\"login-email\" name=\"email\" placeholder=\"email@example.com\" type=\"email\" class=\"form-control\">"
   },
   {
     "param": "password",
     "type": "password",
-    "id": "password",
+    "id": "login-password",
     "name": "password",
-    "html": "<input type=\"password\" name=\"password\" id=\"password\" class=\"form-control\" value=\"\">"
+    "placeholder": "············",
+    "html": "<input placeholder=\"············\" tabindex=\"2\" id=\"login-password\" name=\"password\" type=\"password\" class=\"form-control\">"
   }
 ]
