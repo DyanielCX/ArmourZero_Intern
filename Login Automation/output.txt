@@ -1,18 +1,9 @@
 [
   {
-    "param": "email",
-    "type": "email",
-    "id": "login-email",
-    "name": "email",
-    "placeholder": "email@example.com",
-    "html": "<input tabindex=\"1\" id=\"login-email\" name=\"email\" placeholder=\"email@example.com\" type=\"email\" class=\"form-control\">"
-  },
-  {
     "param": "password",
     "type": "password",
-    "id": "login-password",
+    "id": "password",
     "name": "password",
-    "placeholder": "············",
-    "html": "<input placeholder=\"············\" tabindex=\"2\" id=\"login-password\" name=\"password\" type=\"password\" class=\"form-control\">"
+    "html": "<input class=\"input_error form_input\" placeholder=\"Password\" type=\"password\" data-test=\"password\" id=\"password\" name=\"password\" autocorrect=\"off\" autocapitalize=\"none\" value=\"\">"
   }
 ]

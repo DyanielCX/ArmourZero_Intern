@@ -8,12 +8,12 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 ''' ====================== Website Information ====================== '''
-scanning_url = 'https://labs.wimify.xyz/products/intro'
-login_url = 'https://labs.wimify.xyz/login'
-username = "mvpchen2@gmail.com"
-password = "Password123#"
+scanning_url = 'https://www.saucedemo.com/inventory.html'
+login_url = 'https://www.saucedemo.com/'
+username = "standard_user"
+password = "secret_sauce"
 
-usrnm_varNAME = 'email'
+usrnm_varNAME = 'user-name'
 passw_varNAME = 'password'
 
 ''' ====================== ZAP Configuration ====================== '''
